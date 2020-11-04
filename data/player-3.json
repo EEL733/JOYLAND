@@ -1,0 +1,27 @@
+{
+  "id": 3,
+  "userName": "マザヨイノタバイタバイ!?",
+  "musics": [
+    {
+      "declaredScore": 0,
+      "actualScore": 0,
+      "Music": null,
+      "EarnedScore": 0
+    },
+    {
+      "declaredScore": 0,
+      "actualScore": 0,
+      "Music": null,
+      "EarnedScore": 0
+    },
+    {
+      "declaredScore": 0,
+      "actualScore": 0,
+      "Music": null,
+      "EarnedScore": 0
+    }
+  ],
+  "Vf": 20.039999999999999,
+  "PlayerNo": 4,
+  "ScoreAll": 0
+}

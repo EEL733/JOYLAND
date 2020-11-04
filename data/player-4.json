@@ -1,0 +1,27 @@
+{
+  "id": 4,
+  "userName": "ふわりねあすも",
+  "musics": [
+    {
+      "declaredScore": 0,
+      "actualScore": 0,
+      "Music": null,
+      "EarnedScore": 0
+    },
+    {
+      "declaredScore": 0,
+      "actualScore": 0,
+      "Music": null,
+      "EarnedScore": 0
+    },
+    {
+      "declaredScore": 0,
+      "actualScore": 0,
+      "Music": null,
+      "EarnedScore": 0
+    }
+  ],
+  "Vf": 21.27,
+  "PlayerNo": 5,
+  "ScoreAll": 0
+}

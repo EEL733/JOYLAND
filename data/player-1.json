@@ -1,0 +1,27 @@
+{
+  "id": 1,
+  "userName": "健康☆朝マサラ",
+  "musics": [
+    {
+      "declaredScore": 0,
+      "actualScore": 0,
+      "Music": null,
+      "EarnedScore": 0
+    },
+    {
+      "declaredScore": 0,
+      "actualScore": 0,
+      "Music": null,
+      "EarnedScore": 0
+    },
+    {
+      "declaredScore": 0,
+      "actualScore": 0,
+      "Music": null,
+      "EarnedScore": 0
+    }
+  ],
+  "Vf": 18.809999999999999,
+  "PlayerNo": 2,
+  "ScoreAll": 0
+}
