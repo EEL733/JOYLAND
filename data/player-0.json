@@ -1,27 +1,9 @@
 {
   "id": 0,
-  "userName": "本田\u3000圭佑",
-  "musics": [
-    {
-      "declaredScore": 0,
-      "actualScore": 0,
-      "Music": null,
-      "EarnedScore": 0
-    },
-    {
-      "declaredScore": 0,
-      "actualScore": 0,
-      "Music": null,
-      "EarnedScore": 0
-    },
-    {
-      "declaredScore": 0,
-      "actualScore": 0,
-      "Music": null,
-      "EarnedScore": 0
-    }
-  ],
-  "Vf": 19.010000000000002,
-  "PlayerNo": 3,
-  "ScoreAll": 0
+  "playerNo": 5,
+  "userName": "Gaming 20.06",
+  "vf": 20.06,
+  "vfLank": "Imperial1Low",
+  "musics": {},
+  "scoreAll": 0
 }

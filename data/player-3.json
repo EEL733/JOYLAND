@@ -1,27 +1,9 @@
 {
   "id": 3,
-  "userName": "マザヨイノタバイタバイ!?",
-  "musics": [
-    {
-      "declaredScore": 0,
-      "actualScore": 0,
-      "Music": null,
-      "EarnedScore": 0
-    },
-    {
-      "declaredScore": 0,
-      "actualScore": 0,
-      "Music": null,
-      "EarnedScore": 0
-    },
-    {
-      "declaredScore": 0,
-      "actualScore": 0,
-      "Music": null,
-      "EarnedScore": 0
-    }
-  ],
-  "Vf": 20.039999999999999,
-  "PlayerNo": 4,
-  "ScoreAll": 0
+  "playerNo": 4,
+  "userName": "長谷川町子の代表作。参考文献Wikipedia",
+  "vf": 19.62,
+  "vfLank": "Crimson34",
+  "musics": {},
+  "scoreAll": 0
 }

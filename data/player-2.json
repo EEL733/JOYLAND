@@ -1,27 +1,9 @@
 {
   "id": 2,
-  "userName": "非正規\u3000遊太",
-  "musics": [
-    {
-      "declaredScore": 0,
-      "actualScore": 0,
-      "Music": null,
-      "EarnedScore": 0
-    },
-    {
-      "declaredScore": 0,
-      "actualScore": 0,
-      "Music": null,
-      "EarnedScore": 0
-    },
-    {
-      "declaredScore": 0,
-      "actualScore": 0,
-      "Music": null,
-      "EarnedScore": 0
-    }
-  ],
-  "Vf": 18.77,
-  "PlayerNo": 1,
-  "ScoreAll": 0
+  "playerNo": 3,
+  "userName": "えむしあ",
+  "vf": 19.35,
+  "vfLank": "Crimson12",
+  "musics": {},
+  "scoreAll": 0
 }

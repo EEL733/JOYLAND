@@ -1,27 +1,9 @@
 {
   "id": 4,
-  "userName": "ふわりねあすも",
-  "musics": [
-    {
-      "declaredScore": 0,
-      "actualScore": 0,
-      "Music": null,
-      "EarnedScore": 0
-    },
-    {
-      "declaredScore": 0,
-      "actualScore": 0,
-      "Music": null,
-      "EarnedScore": 0
-    },
-    {
-      "declaredScore": 0,
-      "actualScore": 0,
-      "Music": null,
-      "EarnedScore": 0
-    }
-  ],
-  "Vf": 21.27,
-  "PlayerNo": 5,
-  "ScoreAll": 0
+  "playerNo": 6,
+  "userName": "いーくら",
+  "vf": 20.21,
+  "vfLank": "Imperial1Low",
+  "musics": {},
+  "scoreAll": 0
 }

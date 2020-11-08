@@ -98,46 +98,50 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="AssignmentSongListWindow.xaml.cs">
+    <Compile Include="src\AssignmentSongListWindow.xaml.cs">
       <DependentUpon>AssignmentSongListWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="DialogWindow.xaml.cs">
+    <Compile Include="src\AssignmentSongListWindowVM.cs" />
+    <Compile Include="src\Converter\MusicLevelConverter.cs" />
+    <Compile Include="src\DialogWindow.xaml.cs">
       <DependentUpon>DialogWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="JsonUtil.cs" />
-    <Compile Include="MusicData.cs" />
-    <Compile Include="MusicDataModel.cs" />
-    <Compile Include="MusicLevelConverter.cs" />
-    <Compile Include="MusicDifficultyTypeConverter.cs" />
-    <Compile Include="MusicNameConverter.cs" />
-    <Compile Include="PlayerData.cs" />
-    <Compile Include="PlayerDataListModel.cs" />
-    <Compile Include="ScoreRegisterWindowViewModel.cs" />
-    <Compile Include="UserListWindow.xaml.cs">
+    <Compile Include="src\Model\MusicGroupData.cs" />
+    <Compile Include="src\Model\SelectMusicData.cs" />
+    <Compile Include="src\Repository\MusicGroupRepository.cs" />
+    <Compile Include="src\Repository\MusicDataRepository.cs" />
+    <Compile Include="src\Repository\PlayerDataRepository.cs" />
+    <Compile Include="src\ScoreRegisterWindow.xaml.cs">
+      <DependentUpon>ScoreRegisterWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="src\ScoreRegisterWindowVM.cs" />
+    <Compile Include="src\UserListWindowVM.cs" />
+    <Compile Include="src\Util\CalcUtil.cs" />
+    <Compile Include="src\Util\JsonUtil.cs" />
+    <Compile Include="src\Model\MusicData.cs" />
+    <Compile Include="src\Converter\MusicDifficultyTypeConverter.cs" />
+    <Compile Include="src\Converter\MusicNameConverter.cs" />
+    <Compile Include="src\Model\PlayerData.cs" />
+    <Compile Include="src\UserListWindow.xaml.cs">
       <DependentUpon>UserListWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="VolforceLank.cs" />
-    <Page Include="AssignmentSongListWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="DialogWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="ScoreRegisterWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="ScoreRegisterWindow.xaml.cs">
-      <DependentUpon>ScoreRegisterWindow.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
-    <Page Include="UserListWindow.xaml">
+    <Page Include="src\AssignmentSongListWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="src\DialogWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="src\ScoreRegisterWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="src\UserListWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

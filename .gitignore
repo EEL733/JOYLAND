@@ -87,6 +87,8 @@ StyleCopReport.xml
 *.pidb
 *.svclog
 *.scc
+*.csproj
+*.sln
 
 # Chutzpah Test files
 _Chutzpah*
@@ -338,3 +340,5 @@ ASALocalRun/
 
 # BeatPulse healthcheck temp database
 healthchecksdb
+
+data/tmp

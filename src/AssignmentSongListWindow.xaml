@@ -1,0 +1,103 @@
+﻿<Window
+    x:Class="JOYLAND.AssignmentSongListWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:converter="clr-namespace:JOYLAND.Converter"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="課題曲リスト"
+    Width="540"
+    Background="WhiteSmoke"
+    FontFamily="MS Gothic"
+    ResizeMode="NoResize"
+    mc:Ignorable="d">
+    <Window.Resources>
+        <Style TargetType="DataGridCell">
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding select}" Value="True">
+                    <Setter Property="IsEnabled" Value="False" />
+                    <Setter Property="Background" Value="Gray" />
+                </DataTrigger>
+                <DataTrigger Binding="{Binding visible}" Value="False">
+                    <Setter Property="IsHitTestVisible" Value="False" />
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+    <Viewbox>
+        <StackPanel>
+            <Viewbox>
+                <StackPanel Orientation="Horizontal">
+                    <Viewbox>
+                        <DataGrid
+                            Name="musicGrid1"
+                            Margin="5"
+                            AutoGenerateColumns="False"
+                            CanUserSortColumns="False"
+                            CurrentCellChanged="musicGrid1_CurrentCellChanged"
+                            HeadersVisibility="Column"
+                            IsReadOnly="True"
+                            ItemsSource="{Binding CurrentGroupList}"
+                            KeyboardNavigation.DirectionalNavigation="None"
+                            PreviewKeyDown="musicGrid1_PreviewKeyDown"
+                            SelectionMode="Single">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Binding="{Binding name}" CanUserResize="False" />
+                                <DataGridTextColumn
+                                    Binding="{Binding difficultyType}"
+                                    CanUserResize="False"
+                                    Header="   " />
+                                <DataGridTextColumn
+                                    Binding="{Binding level}"
+                                    CanUserResize="False"
+                                    Header="Lv" />
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </Viewbox>
+                    <Viewbox VerticalAlignment="Top">
+                        <DataGrid
+                            Name="musicGrid2"
+                            Margin="5"
+                            AutoGenerateColumns="False"
+                            CanUserSortColumns="False"
+                            CurrentCellChanged="musicGrid2_CurrentCellChanged"
+                            HeadersVisibility="Column"
+                            IsReadOnly="True"
+                            ItemsSource="{Binding NextGroupList}"
+                            KeyboardNavigation.DirectionalNavigation="None"
+                            PreviewKeyDown="musicGrid2_PreviewKeyDown"
+                            SelectionMode="Single">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Binding="{Binding Converter={converter:MusicNameConverter}}" CanUserResize="False" />
+                                <DataGridTextColumn
+                                    Binding="{Binding Converter={converter:MusicDifficultyTypeConverter}}"
+                                    CanUserResize="False"
+                                    Header="   " />
+                                <DataGridTextColumn
+                                    Binding="{Binding Converter={converter:MusicLevelConverter}}"
+                                    CanUserResize="False"
+                                    Header="Lv" />
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </Viewbox>
+                </StackPanel>
+            </Viewbox>
+            <Viewbox>
+                <StackPanel Orientation="Horizontal">
+                    <Button
+                        x:Name="SelectButton"
+                        Margin="10"
+                        Click="SelectButton_Click"
+                        Content="選曲"
+                        FontSize="24" />
+                    <Button
+                        x:Name="ClearButton"
+                        Margin="10"
+                        Click="ClearButton_Click"
+                        Content="クリア"
+                        FontSize="16" />
+                </StackPanel>
+            </Viewbox>
+        </StackPanel>
+    </Viewbox>
+</Window>
