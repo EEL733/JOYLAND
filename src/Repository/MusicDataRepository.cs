@@ -39,6 +39,7 @@ namespace JOYLAND.Repository {
                     Save(data);
                 });
             }
+            list.Sort((d1, d2) => d1.id - d2.id);
             return list;
         }
 
