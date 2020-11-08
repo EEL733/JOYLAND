@@ -20,6 +20,34 @@
                 </DataTrigger>
                 <DataTrigger Binding="{Binding visible}" Value="False">
                     <Setter Property="IsHitTestVisible" Value="False" />
+                    <Setter Property="Background" Value="DarkGray" />
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="DifficultyTypeCell" TargetType="DataGridCell">
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding difficultyType}" Value="EXH">
+                    <Setter Property="Background" Value="Red" />
+                </DataTrigger>
+                <DataTrigger Binding="{Binding difficultyType}" Value="MXM">
+                    <Setter Property="Background" Value="Silver" />
+                </DataTrigger>
+                <DataTrigger Binding="{Binding difficultyType}" Value="INF">
+                    <Setter Property="Background" Value="MediumOrchid" />
+                </DataTrigger>
+                <DataTrigger Binding="{Binding difficultyType}" Value="GRV">
+                    <Setter Property="Background" Value="DarkOrange" />
+                </DataTrigger>
+                <DataTrigger Binding="{Binding difficultyType}" Value="HVN">
+                    <Setter Property="Background" Value="Aqua" />
+                </DataTrigger>
+                <DataTrigger Binding="{Binding select}" Value="True">
+                    <Setter Property="IsEnabled" Value="False" />
+                    <Setter Property="Background" Value="Gray" />
+                </DataTrigger>
+                <DataTrigger Binding="{Binding visible}" Value="False">
+                    <Setter Property="IsHitTestVisible" Value="False" />
+                    <Setter Property="Background" Value="DarkGray" />
                 </DataTrigger>
             </Style.Triggers>
         </Style>
@@ -46,6 +74,7 @@
                                 <DataGridTextColumn
                                     Binding="{Binding difficultyType}"
                                     CanUserResize="False"
+                                    CellStyle="{StaticResource DifficultyTypeCell}"
                                     Header="   " />
                                 <DataGridTextColumn
                                     Binding="{Binding level}"
@@ -72,6 +101,7 @@
                                 <DataGridTextColumn
                                     Binding="{Binding Converter={converter:MusicDifficultyTypeConverter}}"
                                     CanUserResize="False"
+                                    CellStyle="{StaticResource DifficultyTypeCell}"
                                     Header="   " />
                                 <DataGridTextColumn
                                     Binding="{Binding Converter={converter:MusicLevelConverter}}"
