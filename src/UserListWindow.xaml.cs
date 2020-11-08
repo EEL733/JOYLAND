@@ -20,5 +20,9 @@ namespace JOYLAND {
             window.ShowDialog();
             vm.OnPropertyChange("AllUser");
         }
+
+        private void Window_Closing(object sender, System.EventArgs e) {
+            new TitleWindow().Show();
+        }
     }
 }

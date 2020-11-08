@@ -7,6 +7,7 @@
     Title="参加者一覧"
     Width="960"
     Background="WhiteSmoke"
+    Closing="Window_Closing"
     FontFamily="MS Gothic"
     FontSize="48"
     ResizeMode="NoResize"
