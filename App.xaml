@@ -2,6 +2,6 @@
     x:Class="JOYLAND.App"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    StartupUri="src\UserListWindow.xaml">
+    StartupUri="src\Title.xaml">
     <Application.Resources />
 </Application>
