@@ -4,7 +4,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    Title="イキリスコア賞"
+    Title="身の丈に合わなかったで賞"
     FontFamily="MS Gothic"
     mc:Ignorable="d">
 
@@ -24,7 +24,7 @@
             Grid.Row="0"
             Grid.Column="0"
             Grid.ColumnSpan="3">
-            <TextBlock Padding="1" Text="イキリスコア賞" />
+            <TextBlock Padding="1" Text="身の丈に合わなかったで賞" />
         </Viewbox>
         <Viewbox
             Grid.Row="1"

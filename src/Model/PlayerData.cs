@@ -23,6 +23,17 @@ namespace JOYLAND.Model {
         public VolforceLank vfLank { get; set; }
         public Dictionary<int, SelectMusicData> musics { get; } = new Dictionary<int, SelectMusicData>();
         public int scoreAll { get; set; } = 0;
+        public long variance140 {
+            get {
+                if (musics.Count != 3) {
+                    return long.MaxValue;
+                }
+                long a = musics[0].actualScore;
+                long b = musics[1].actualScore;
+                long c = musics[2].actualScore;
+                return a * (a - b) + b * (b - c) + c * (c - a);
+            }
+        }
 
         public PlayerData(int id, string userName, double vf) {
             this.id = id;
