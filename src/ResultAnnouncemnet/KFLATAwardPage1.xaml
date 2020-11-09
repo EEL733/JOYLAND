@@ -38,9 +38,27 @@
             Grid.ColumnSpan="3"
             Margin="5"
             BorderBrush="Black"
-            BorderThickness="5" />
+            BorderThickness="5">
+            <Viewbox>
+                <TextBlock Text="{Binding KFLATAward1Name}" />
+            </Viewbox>
+        </Border>
+        <Border
+            Grid.Row="3"
+            Grid.Column="0"
+            Margin="5"
+            BorderBrush="Black"
+            BorderThickness="5">
+            <Viewbox>
+                <TextBlock Text="{Binding KFLATAward1Sub}" />
+            </Viewbox>
+        </Border>
         <Viewbox Grid.Row="3" Grid.Column="1">
-            <Button Margin="2" Content="発表" />
+            <Button
+                Name="PresentButton"
+                Margin="2"
+                Click="PresentButton_Click"
+                Content="発表" />
         </Viewbox>
         <Viewbox
             Grid.Row="3"

@@ -8,6 +8,11 @@ namespace JOYLAND {
             InitializeComponent();
         }
 
+        private void PresentButton_Click(object sender, System.Windows.RoutedEventArgs e) {
+            ResultAnnouncementWindowVM vm = DataContext as ResultAnnouncementWindowVM;
+            vm.GetEEL733Award3();
+        }
+
         private void NextButton_Click(object sender, System.Windows.RoutedEventArgs e) {
             if (page == null) {
                 page = new EEL733AwardPage4();
