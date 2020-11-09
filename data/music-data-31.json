@@ -5,5 +5,9 @@
   "level": 17,
   "group": 2,
   "select": false,
-  "visible": true
+  "visible": true,
+  "bpm": 178,
+  "fx": 7,
+  "version": 4,
+  "touhou": false
 }
