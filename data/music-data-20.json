@@ -1,13 +1,13 @@
 {
-  "id": 20,
-  "name": "8 -eight-",
-  "difficultyType": "EXH",
-  "level": 16,
-  "group": 1,
-  "select": false,
-  "visible": true,
-  "bpm": 230,
-  "fx": 0,
-  "version": 2,
-  "touhou": false
+	"id": 20,
+	"name": "8 -eight-",
+	"difficultyType": "EXH",
+	"level": 16,
+	"group": 1,
+	"select": false,
+	"visible": false,
+	"bpm": 230,
+	"fx": 0,
+	"version": 2,
+	"touhou": false
 }

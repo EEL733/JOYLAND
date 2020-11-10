@@ -5,7 +5,7 @@
   "level": 16,
   "group": 1,
   "select": false,
-  "visible": true,
+  "visible": false,
   "bpm": 145,
   "fx": 3,
   "version": 5,

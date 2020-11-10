@@ -1,13 +1,13 @@
 {
-  "id": 22,
-  "name": "マトリョシカ",
-  "difficultyType": "MXM",
-  "level": 16,
-  "group": 1,
-  "select": false,
-  "visible": true,
-  "bpm": 296,
-  "fx": 13,
-  "version": 4,
-  "touhou": false
+	"id": 22,
+	"name": "マトリョシカ",
+	"difficultyType": "MXM",
+	"level": 16,
+	"group": 1,
+	"select": false,
+	"visible": false,
+	"bpm": 296,
+	"fx": 13,
+	"version": 4,
+	"touhou": false
 }

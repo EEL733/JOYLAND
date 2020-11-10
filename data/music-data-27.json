@@ -1,13 +1,13 @@
 {
-  "id": 27,
-  "name": "朱と碧のランページ",
-  "difficultyType": "EXH",
-  "level": 17,
-  "group": 1,
-  "select": false,
-  "visible": true,
-  "bpm": 178,
-  "fx": 0,
-  "version": 2,
-  "touhou": false
+	"id": 27,
+	"name": "朱と碧のランページ",
+	"difficultyType": "EXH",
+	"level": 17,
+	"group": 1,
+	"select": false,
+	"visible": false,
+	"bpm": 178,
+	"fx": 0,
+	"version": 2,
+	"touhou": false
 }

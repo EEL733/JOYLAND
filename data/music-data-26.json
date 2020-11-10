@@ -1,13 +1,13 @@
 {
-  "id": 26,
-  "name": "Enjoy This Time",
-  "difficultyType": "MXM",
-  "level": 17,
-  "group": 1,
-  "select": false,
-  "visible": true,
-  "bpm": 170,
-  "fx": 12,
-  "version": 5,
-  "touhou": false
+	"id": 26,
+	"name": "Enjoy This Time",
+	"difficultyType": "MXM",
+	"level": 17,
+	"group": 1,
+	"select": false,
+	"visible": false,
+	"bpm": 170,
+	"fx": 12,
+	"version": 5,
+	"touhou": false
 }

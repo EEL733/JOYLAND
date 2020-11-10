@@ -1,13 +1,13 @@
 {
-  "id": 25,
-  "name": "Cloud 9",
-  "difficultyType": "EXH",
-  "level": 16,
-  "group": 1,
-  "select": false,
-  "visible": true,
-  "bpm": 153,
-  "fx": 0,
-  "version": 4,
-  "touhou": false
+	"id": 25,
+	"name": "Cloud 9",
+	"difficultyType": "EXH",
+	"level": 16,
+	"group": 1,
+	"select": false,
+	"visible": false,
+	"bpm": 153,
+	"fx": 0,
+	"version": 4,
+	"touhou": false
 }

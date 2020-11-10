@@ -1,13 +1,13 @@
 {
-  "id": 19,
-  "name": "C18H27NO3",
-  "difficultyType": "EXH",
-  "level": 16,
-  "group": 1,
-  "select": false,
-  "visible": true,
-  "bpm": 210,
-  "fx": 0,
-  "version": 2,
-  "touhou": false
+	"id": 19,
+	"name": "C18H27NO3",
+	"difficultyType": "EXH",
+	"level": 16,
+	"group": 1,
+	"select": false,
+	"visible": false,
+	"bpm": 210,
+	"fx": 0,
+	"version": 2,
+	"touhou": false
 }

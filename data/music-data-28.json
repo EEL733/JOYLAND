@@ -1,13 +1,13 @@
 {
-  "id": 28,
-  "name": "Smoked Turkey Rag",
-  "difficultyType": "MXM",
-  "level": 17,
-  "group": 1,
-  "select": false,
-  "visible": true,
-  "bpm": 150,
-  "fx": 4,
-  "version": 4,
-  "touhou": false
+	"id": 28,
+	"name": "Smoked Turkey Rag",
+	"difficultyType": "MXM",
+	"level": 17,
+	"group": 1,
+	"select": false,
+	"visible": false,
+	"bpm": 150,
+	"fx": 4,
+	"version": 4,
+	"touhou": false
 }

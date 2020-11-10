@@ -1,13 +1,13 @@
 {
-  "id": 29,
-  "name": "HEAVENLY SMILE",
-  "difficultyType": "MXM",
-  "level": 17,
-  "group": 1,
-  "select": false,
-  "visible": true,
-  "bpm": 184,
-  "fx": 9,
-  "version": 4,
-  "touhou": false
+	"id": 29,
+	"name": "HEAVENLY SMILE",
+	"difficultyType": "MXM",
+	"level": 17,
+	"group": 1,
+	"select": false,
+	"visible": false,
+	"bpm": 184,
+	"fx": 9,
+	"version": 4,
+	"touhou": false
 }
