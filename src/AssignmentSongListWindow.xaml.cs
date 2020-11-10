@@ -59,6 +59,7 @@ namespace JOYLAND {
         }
 
         private void ClearButton_Click(object sender, RoutedEventArgs e) {
+            vm.UnSelect(selectMusic);
             selectMusic = null;
             Close();
         }

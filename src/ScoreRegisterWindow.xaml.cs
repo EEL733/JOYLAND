@@ -15,7 +15,7 @@ namespace JOYLAND {
 
         private void button1_Click(object sender, RoutedEventArgs e) {
             AssignmentSongListWindow window = new AssignmentSongListWindow {
-                selectMusic = vm.GetSelectMusicData(0)
+                selectMusic = vm.GetSelectMusic(0)
             };
             window.ShowDialog();
             if (window.selectMusic != null) {
@@ -27,7 +27,7 @@ namespace JOYLAND {
 
         private void button2_Click(object sender, RoutedEventArgs e) {
             AssignmentSongListWindow window = new AssignmentSongListWindow {
-                selectMusic = vm.GetSelectMusicData(1)
+                selectMusic = vm.GetSelectMusic(1)
             };
             window.ShowDialog();
             if (window.selectMusic != null) {
@@ -39,7 +39,7 @@ namespace JOYLAND {
 
         private void button3_Click(object sender, RoutedEventArgs e) {
             AssignmentSongListWindow window = new AssignmentSongListWindow() {
-                selectMusic = vm.GetSelectMusicData(2)
+                selectMusic = vm.GetSelectMusic(2)
             };
             window.ShowDialog();
             if (window.selectMusic != null) {
@@ -47,6 +47,24 @@ namespace JOYLAND {
             } else {
                 vm.UnSelect(2);
             }
+        }
+
+        private void DetailInputMenu1_Click(object sender, RoutedEventArgs e) {
+            DetailInputWindow window = new DetailInputWindow(vm.GetSelectMusicData(0));
+            window.ShowDialog();
+            vm.Calc();
+        }
+
+        private void DetailInputMenu2_Click(object sender, RoutedEventArgs e) {
+            DetailInputWindow window = new DetailInputWindow(vm.GetSelectMusicData(1));
+            window.ShowDialog();
+            vm.Calc();
+        }
+
+        private void DetailInputMenu3_Click(object sender, RoutedEventArgs e) {
+            DetailInputWindow window = new DetailInputWindow(vm.GetSelectMusicData(2));
+            window.ShowDialog();
+            vm.Calc();
         }
 
         private void declaredScoreTextBox1_PreviewTextInput(object sender, TextCompositionEventArgs e) {

@@ -5,10 +5,11 @@ using System.Windows.Data;
 using System.Windows.Markup;
 
 namespace JOYLAND.Converter {
-    public class MusicDifficultyTypeConverter : MarkupExtension, IValueConverter {
+    public class ExistSelectMusicDataConverter : MarkupExtension, IValueConverter {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture) {
-            MusicData data = value as MusicData;
-            return data.visible ? data.difficultyType : "???";
+            PlayerData player = value as PlayerData;
+            int key = int.Parse((string)parameter);
+            return player.musics.ContainsKey(key);
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture) {

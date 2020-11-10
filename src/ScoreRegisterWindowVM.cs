@@ -12,12 +12,16 @@ namespace JOYLAND {
             player = playerDataRepository.Get(playerId);
         }
 
-        public MusicData GetSelectMusicData(int trackId) {
-            return player.musics.TryGetValue(trackId, out SelectMusicData result) ? result.music : null;
+        public MusicData GetSelectMusic(int trackId) {
+            return GetSelectMusicData(trackId)?.music;
+        }
+
+        public SelectMusicData GetSelectMusicData(int trackId) {
+            return player.musics.ContainsKey(trackId) ? player.musics[trackId] : null;
         }
 
         public void Select(int trackId, MusicData music) {
-            if (music == null || GetSelectMusicData(trackId) == music) {
+            if (music == null || GetSelectMusic(trackId) == music) {
                 return;
             }
 
@@ -36,9 +40,9 @@ namespace JOYLAND {
             int sum = 0;
             for (int i = 0; i < 3; i++) {
                 if (player.musics.ContainsKey(i)) {
-                SelectMusicData data = player.musics[i];
+                    SelectMusicData data = player.musics[i];
                     if (data != null) {
-                        data.earnedScore = CalcUtil.ClacEarnedScore(player.vf, player.vfLank, data.declaredScore, data.actualScore);
+                        data.earnedScore = CalcUtil.ClacEarnedScore(player.vf, player.vfLank, data.declaredScore * 10000, data.actualScore);
                         sum += data.earnedScore;
                     }
                 }

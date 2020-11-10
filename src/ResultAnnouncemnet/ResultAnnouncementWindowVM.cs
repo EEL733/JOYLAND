@@ -42,7 +42,7 @@ namespace JOYLAND {
         // 優勝者
         public void GetWinner() {
             PlayerData winner = repository.Get(0);
-            foreach(PlayerData data in playerList) {
+            foreach (PlayerData data in playerList) {
                 if (data.scoreAll >= winner.scoreAll) {
                     winner = data;
                 }

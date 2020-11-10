@@ -21,8 +21,20 @@ namespace JOYLAND.Util {
             }
         }
 
-        public static int ClacEarnedScore(double vf, VolforceLank vfLank, int _declaredScore, int actualScore) {
-            int declaredScore = _declaredScore * 10000;
+        public static int CalcActualScore(int critical, int near, int error) {
+            int sum = critical + near + error;
+            if (sum == 0) {
+                return 0;
+            }
+
+            return (int)Math.Floor(((critical * 2) + near) * 10000000.0 / (sum * 2));
+        }
+
+        public static int ClacEarnedScore(double vf, VolforceLank vfLank, int declaredScore, int actualScore) {
+            if (actualScore == 0) {
+                return 0;
+            }
+
             if (actualScore >= declaredScore) {
                 return declaredScore;
             }

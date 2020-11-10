@@ -43,6 +43,14 @@ namespace JOYLAND {
 
         internal void Select(MusicData music) {
             music.select = true;
+            musicDataRepository.Save(music);
+        }
+
+        internal void UnSelect(MusicData music) {
+            if (music != null) {
+                music.select = false;
+                musicDataRepository.Save(music);
+            }
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
