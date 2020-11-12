@@ -99,7 +99,7 @@
             BorderBrush="Black"
             BorderThickness="2">
             <Viewbox Margin="2">
-                <TextBlock Name="music1" Text="{Binding Path=player.musics[0].music.name}" />
+                <TextBlock Name="music1" Text="{Binding player, Converter={converter:SelectMusicNameConverter}, ConverterParameter=0}" />
             </Viewbox>
         </Border>
         <Viewbox Grid.Row="1" Grid.Column="6">
@@ -125,7 +125,7 @@
             BorderThickness="2"
             ContextMenu="{x:Null}"
             FontSize="38"
-            IsEnabled="{Binding Path=player, Converter={converter:ExistSelectMusicDataConverter}, ConverterParameter=0}"
+            IsEnabled="{Binding player, Converter={converter:ExistSelectMusicDataConverter}, ConverterParameter=0}"
             PreviewTextInput="declaredScoreTextBox1_PreviewTextInput"
             Text="{Binding Path=player.musics[0].declaredScore, UpdateSourceTrigger=PropertyChanged}" />
         <Viewbox
@@ -151,7 +151,7 @@
             BorderBrush="Black"
             BorderThickness="2"
             FontSize="38"
-            IsEnabled="{Binding Path=player, Converter={converter:ExistSelectMusicDataConverter}, ConverterParameter=0}"
+            IsEnabled="{Binding player, Converter={converter:ExistSelectMusicDataConverter}, ConverterParameter=0}"
             PreviewTextInput="actualScoreTextBox1_PreviewTextInput"
             Text="{Binding Path=player.musics[0].actualScore, UpdateSourceTrigger=PropertyChanged}">
             <TextBox.ContextMenu>
@@ -168,7 +168,7 @@
             BorderBrush="Black"
             BorderThickness="2">
             <Viewbox Margin="2">
-                <TextBlock Text="{Binding Path=player.musics[0].earnedScore, StringFormat={}{0:N0}}" />
+                <TextBlock Text="{Binding Path=player, Converter={converter:EarnedScoreConverter}, ConverterParameter=0}" />
             </Viewbox>
         </Border>
 
@@ -188,7 +188,7 @@
             BorderBrush="Black"
             BorderThickness="2">
             <Viewbox Margin="2">
-                <TextBlock Name="music2" Text="{Binding Path=player.musics[1].music.name}" />
+                <TextBlock Name="music2" Text="{Binding player, Converter={converter:SelectMusicNameConverter}, ConverterParameter=1}" />
             </Viewbox>
         </Border>
         <Viewbox Grid.Row="3" Grid.Column="6">
@@ -257,7 +257,7 @@
             BorderBrush="Black"
             BorderThickness="2">
             <Viewbox Margin="2">
-                <TextBlock Text="{Binding Path=player.musics[1].earnedScore, StringFormat={}{0:N0}}" TextAlignment="Right" />
+                <TextBlock Text="{Binding player, Converter={converter:EarnedScoreConverter}, ConverterParameter=1}" />
             </Viewbox>
         </Border>
 
@@ -277,7 +277,7 @@
             BorderBrush="Black"
             BorderThickness="2">
             <Viewbox Margin="2">
-                <TextBlock Name="music3" Text="{Binding Path=player.musics[2].music.name}" />
+                <TextBlock Name="music3" Text="{Binding player, Converter={converter:SelectMusicNameConverter}, ConverterParameter=2}" />
             </Viewbox>
         </Border>
         <Viewbox Grid.Row="5" Grid.Column="6">
@@ -346,7 +346,7 @@
             BorderBrush="Black"
             BorderThickness="2">
             <Viewbox Margin="2">
-                <TextBlock Text="{Binding Path=player.musics[2].earnedScore, StringFormat={}{0:N0}}" TextAlignment="Right" />
+                <TextBlock Text="{Binding player, Converter={converter:EarnedScoreConverter}, ConverterParameter=2}" />
             </Viewbox>
         </Border>
 
@@ -375,7 +375,7 @@
             BorderBrush="Black"
             BorderThickness="2">
             <Viewbox Margin="2">
-                <TextBlock Text="{Binding Path=player.scoreAll, StringFormat={}{0:N0}}" TextAlignment="Right" />
+                <TextBlock Text="{Binding Path=player.scoreAll, StringFormat={}{0:N0}}" />
             </Viewbox>
         </Border>
     </Grid>

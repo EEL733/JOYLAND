@@ -5,19 +5,14 @@ using System.Windows.Data;
 using System.Windows.Markup;
 
 namespace JOYLAND.Converter {
-    public class ExistSelectMusicDataConverter : MarkupExtension, IValueConverter {
-        public object Convert(object value, Type targetType, object parameter, CultureInfo culture) {
-            PlayerData player = value as PlayerData;
+    public class ExistSelectMusicDataConverter : ValueConverterBase<PlayerData, bool> {
+        public override bool Convert(PlayerData player, object parameter) {
             int key = int.Parse((string)parameter);
             return player.musics.ContainsKey(key);
         }
 
-        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture) {
+        public override PlayerData ConvertBack(bool value, object parameter) {
             throw new NotImplementedException();
-        }
-
-        public override object ProvideValue(IServiceProvider serviceProvider) {
-            return this;
         }
     }
 }

@@ -6,7 +6,7 @@ using System.ComponentModel;
 namespace JOYLAND {
     internal class ScoreRegisterWindowVM : INotifyPropertyChanged {
         private readonly PlayerDataRepository playerDataRepository = PlayerDataRepository.Instance;
-        public PlayerData player { get; }
+        public PlayerData player { get; set; }
 
         public ScoreRegisterWindowVM(int playerId) {
             player = playerDataRepository.Get(playerId);
@@ -33,7 +33,7 @@ namespace JOYLAND {
         public void UnSelect(int trackId) {
             PrevDelete(trackId);
             player.musics.Remove(trackId);
-            Save();
+            Calc();
         }
 
         public void Calc() {
