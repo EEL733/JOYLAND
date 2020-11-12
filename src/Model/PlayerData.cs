@@ -26,7 +26,7 @@ namespace JOYLAND.Model {
         public long variance140 {
             get {
                 if (musics.Count != 3) {
-                    return long.MaxValue;
+                    return 300000000000001;
                 }
                 long a = musics[0].actualScore;
                 long b = musics[1].actualScore;
