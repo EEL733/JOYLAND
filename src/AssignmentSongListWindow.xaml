@@ -67,7 +67,7 @@
                             IsReadOnly="True"
                             ItemsSource="{Binding CurrentGroupList}"
                             KeyboardNavigation.DirectionalNavigation="None"
-                            PreviewKeyDown="musicGrid1_PreviewKeyDown"
+                            PreviewKeyDown="musicGrid_PreviewKeyDown"
                             SelectionMode="Single">
                             <DataGrid.Columns>
                                 <DataGridTextColumn Binding="{Binding name}" CanUserResize="False" />
@@ -94,7 +94,7 @@
                             IsReadOnly="True"
                             ItemsSource="{Binding NextGroupList}"
                             KeyboardNavigation.DirectionalNavigation="None"
-                            PreviewKeyDown="musicGrid2_PreviewKeyDown"
+                            PreviewKeyDown="musicGrid_PreviewKeyDown"
                             SelectionMode="Single">
                             <DataGrid.Columns>
                                 <DataGridTextColumn Binding="{Binding Converter={converter:MusicNameConverter}}" CanUserResize="False" />
@@ -119,13 +119,15 @@
                         Margin="10"
                         Click="SelectButton_Click"
                         Content="選曲"
-                        FontSize="24" />
+                        FontSize="24"
+                        KeyboardNavigation.AcceptsReturn="False" />
                     <Button
                         x:Name="ClearButton"
                         Margin="10"
                         Click="ClearButton_Click"
                         Content="クリア"
-                        FontSize="16" />
+                        FontSize="16"
+                        KeyboardNavigation.AcceptsReturn="False" />
                 </StackPanel>
             </Viewbox>
         </StackPanel>

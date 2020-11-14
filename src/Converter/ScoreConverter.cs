@@ -1,6 +1,5 @@
 ﻿using JOYLAND.Model;
 using System;
-using System.Globalization;
 
 namespace JOYLAND.Converter {
     public class EarnedScoreConverter : ValueConverterBase<PlayerData, string> {

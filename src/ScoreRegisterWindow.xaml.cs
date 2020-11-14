@@ -1,5 +1,4 @@
 ﻿using System.ComponentModel;
-using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -32,38 +31,6 @@ namespace JOYLAND {
             DetailInputWindow window = new DetailInputWindow(vm.GetSelectMusicData(trackId));
             window.ShowDialog();
             vm.Calc();
-        }
-
-        private void declaredScoreTextBox_PreviewTextInput(object sender, TextCompositionEventArgs e) {
-            TextBox textBox = sender as TextBox;
-            e.Handled = !checkDeclaredScore(textBox.Text, e.Text, textBox.SelectionStart, textBox.SelectionLength);
-        }
-
-        private void actualScoreTextBox_PreviewTextInput(object sender, TextCompositionEventArgs e) {
-            TextBox textBox = sender as TextBox;
-            e.Handled = !checkActualScore(textBox.Text, e.Text, textBox.SelectionStart, textBox.SelectionLength);
-        }
-
-        private bool checkDeclaredScore(string pre, string input, int selectionStart, int selectionLength) {
-            Regex regex = new Regex("[0-9]+");
-            if (!regex.IsMatch(input)) {
-                return false;
-            }
-
-            string newStr = pre.Remove(selectionStart, selectionLength).Insert(selectionStart, input);
-            int value = int.Parse(newStr);
-            return 0 <= value && value <= 1000;
-        }
-
-        private bool checkActualScore(string pre, string input, int selectionStart, int selectionLength) {
-            Regex regex = new Regex("[0-9]+");
-            if (!regex.IsMatch(input)) {
-                return false;
-            }
-
-            string newStr = pre.Remove(selectionStart, selectionLength).Insert(selectionStart, input);
-            int value = int.Parse(newStr);
-            return 0 <= value && value <= 10000000;
         }
 
         private void CommandBinding_Save(object sender, ExecutedRoutedEventArgs e) {

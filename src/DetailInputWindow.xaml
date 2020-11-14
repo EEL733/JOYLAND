@@ -2,8 +2,9 @@
     x:Class="JOYLAND.DetailInputWindow"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:behavior="clr-namespace:JOYLAND.Behavior"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:local="clr-namespace:JOYLAND"
+    xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="スコア詳細入力"
     Width="340"
@@ -34,8 +35,11 @@
             BorderBrush="Black"
             BorderThickness="2"
             FontSize="44"
-            PreviewTextInput="TextBox_PreviewTextInput"
-            Text="{Binding Path=critical, UpdateSourceTrigger=PropertyChanged}" />
+            Text="{Binding Path=critical, UpdateSourceTrigger=PropertyChanged}">
+            <i:Interaction.Behaviors>
+                <behavior:DetailInputWindowTextBoxBehavior />
+            </i:Interaction.Behaviors>
+        </TextBox>
         <Viewbox Grid.Row="1" Grid.Column="0">
             <TextBlock Padding="2" Text="NEAR" />
         </Viewbox>
@@ -47,8 +51,11 @@
             BorderBrush="Black"
             BorderThickness="2"
             FontSize="44"
-            PreviewTextInput="TextBox_PreviewTextInput"
-            Text="{Binding Path=near, UpdateSourceTrigger=PropertyChanged}" />
+            Text="{Binding Path=near, UpdateSourceTrigger=PropertyChanged}">
+            <i:Interaction.Behaviors>
+                <behavior:DetailInputWindowTextBoxBehavior />
+            </i:Interaction.Behaviors>
+        </TextBox>
         <Viewbox Grid.Row="2" Grid.Column="0">
             <TextBlock Padding="2" Text="ERROR" />
         </Viewbox>
@@ -60,8 +67,11 @@
             BorderBrush="Black"
             BorderThickness="2"
             FontSize="44"
-            PreviewTextInput="TextBox_PreviewTextInput"
-            Text="{Binding Path=error, UpdateSourceTrigger=PropertyChanged}" />
+            Text="{Binding Path=error, UpdateSourceTrigger=PropertyChanged}">
+            <i:Interaction.Behaviors>
+                <behavior:DetailInputWindowTextBoxBehavior />
+            </i:Interaction.Behaviors>
+        </TextBox>
         <Viewbox Grid.Row="3" Grid.Column="1">
             <Button
                 Margin="3"

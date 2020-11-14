@@ -2,8 +2,10 @@
     x:Class="JOYLAND.ScoreRegisterWindow"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:behavior="clr-namespace:JOYLAND.Behavior"
     xmlns:converter="clr-namespace:JOYLAND.Converter"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="スコア登録"
     Width="960"
@@ -126,8 +128,11 @@
             ContextMenu="{x:Null}"
             FontSize="38"
             IsEnabled="{Binding player, Converter={converter:ExistSelectMusicDataConverter}, ConverterParameter=0}"
-            PreviewTextInput="declaredScoreTextBox_PreviewTextInput"
-            Text="{Binding Path=player.musics[0].declaredScore, UpdateSourceTrigger=PropertyChanged}" />
+            Text="{Binding Path=player.musics[0].declaredScore, UpdateSourceTrigger=PropertyChanged}">
+            <i:Interaction.Behaviors>
+                <behavior:DeclaredScoreTextBoxBehavior />
+            </i:Interaction.Behaviors>
+        </TextBox>
         <Viewbox
             Grid.Row="2"
             Grid.Column="3"
@@ -152,8 +157,10 @@
             BorderThickness="2"
             FontSize="38"
             IsEnabled="{Binding player, Converter={converter:ExistSelectMusicDataConverter}, ConverterParameter=0}"
-            PreviewTextInput="actualScoreTextBox_PreviewTextInput"
             Text="{Binding Path=player.musics[0].actualScore, UpdateSourceTrigger=PropertyChanged}">
+            <i:Interaction.Behaviors>
+                <behavior:DeclaredScoreTextBoxBehavior />
+            </i:Interaction.Behaviors>
             <TextBox.ContextMenu>
                 <ContextMenu>
                     <MenuItem
@@ -218,8 +225,11 @@
             ContextMenu="{x:Null}"
             FontSize="38"
             IsEnabled="{Binding Path=player, Converter={converter:ExistSelectMusicDataConverter}, ConverterParameter=1}"
-            PreviewTextInput="declaredScoreTextBox_PreviewTextInput"
-            Text="{Binding Path=player.musics[1].declaredScore, UpdateSourceTrigger=PropertyChanged}" />
+            Text="{Binding Path=player.musics[1].declaredScore, UpdateSourceTrigger=PropertyChanged}">
+            <i:Interaction.Behaviors>
+                <behavior:DeclaredScoreTextBoxBehavior />
+            </i:Interaction.Behaviors>
+        </TextBox>
         <Viewbox
             Grid.Row="4"
             Grid.Column="3"
@@ -244,8 +254,10 @@
             BorderThickness="2"
             FontSize="38"
             IsEnabled="{Binding Path=player, Converter={converter:ExistSelectMusicDataConverter}, ConverterParameter=1}"
-            PreviewTextInput="actualScoreTextBox_PreviewTextInput"
             Text="{Binding Path=player.musics[1].actualScore, UpdateSourceTrigger=PropertyChanged}">
+            <i:Interaction.Behaviors>
+                <behavior:DeclaredScoreTextBoxBehavior />
+            </i:Interaction.Behaviors>
             <TextBox.ContextMenu>
                 <ContextMenu>
                     <MenuItem
@@ -310,8 +322,11 @@
             ContextMenu="{x:Null}"
             FontSize="38"
             IsEnabled="{Binding Path=player, Converter={converter:ExistSelectMusicDataConverter}, ConverterParameter=2}"
-            PreviewTextInput="declaredScoreTextBox_PreviewTextInput"
-            Text="{Binding Path=player.musics[2].declaredScore, UpdateSourceTrigger=PropertyChanged}" />
+            Text="{Binding Path=player.musics[2].declaredScore, UpdateSourceTrigger=PropertyChanged}">
+            <i:Interaction.Behaviors>
+                <behavior:DeclaredScoreTextBoxBehavior />
+            </i:Interaction.Behaviors>
+        </TextBox>
         <Viewbox
             Grid.Row="6"
             Grid.Column="3"
@@ -336,8 +351,10 @@
             BorderThickness="2"
             FontSize="38"
             IsEnabled="{Binding Path=player, Converter={converter:ExistSelectMusicDataConverter}, ConverterParameter=2}"
-            PreviewTextInput="actualScoreTextBox_PreviewTextInput"
             Text="{Binding Path=player.musics[2].actualScore, UpdateSourceTrigger=PropertyChanged}">
+            <i:Interaction.Behaviors>
+                <behavior:DeclaredScoreTextBoxBehavior />
+            </i:Interaction.Behaviors>
             <TextBox.ContextMenu>
                 <ContextMenu>
                     <MenuItem

@@ -1,8 +1,5 @@
 ﻿using JOYLAND.Model;
 using System;
-using System.Globalization;
-using System.Windows.Data;
-using System.Windows.Markup;
 
 namespace JOYLAND.Converter {
     public class ExistSelectMusicDataConverter : ValueConverterBase<PlayerData, bool> {

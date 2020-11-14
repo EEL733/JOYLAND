@@ -56,7 +56,7 @@ namespace JOYLAND {
 
         // 実プレースコアの端数3桁が最も210に近い人
         public void GetKFLATAward1() {
-            List<string> result = new List<string>();
+            HashSet<string> result = new HashSet<string>();
             int min = 1000;
             int targetScore = 0;
             foreach (PlayerData data in playerList) {
@@ -73,7 +73,7 @@ namespace JOYLAND {
                 }
             }
 
-            KFLATAward1Name = result.Count > 0 ? ArrayToString(result) : "該当者なし";
+            KFLATAward1Name = result.Count > 0 ? CollectionToString(result) : "該当者なし";
             OnPropertyChange("KFLATAward1Name");
             KFLATAward1Sub = result.Count > 0 ? $"スコア:{targetScore,8}\n差分　:{min,8}" : "";
             OnPropertyChange("KFLATAward1Sub");
@@ -81,12 +81,12 @@ namespace JOYLAND {
 
         // 一度に宣言スコアを下回った点数が最も大きい人
         public void GetKFLATAward2() {
-            List<string> result = new List<string>();
+            HashSet<string> result = new HashSet<string>();
             int max = -1;
             foreach (PlayerData data in playerList) {
                 foreach (SelectMusicData selectData in data.musics.Values) {
                     int declaredScore = selectData.declaredScore * 10000;
-                    if (selectData.actualScore <= declaredScore) {
+                    if (selectData.actualScore < declaredScore) {
                         int diff = declaredScore - selectData.actualScore;
                         if (max < diff) {
                             max = diff;
@@ -99,7 +99,7 @@ namespace JOYLAND {
                 }
             }
 
-            KFLATAward2Name = result.Count > 0 ? ArrayToString(result) : "該当者なし";
+            KFLATAward2Name = result.Count > 0 ? CollectionToString(result) : "該当者なし";
             OnPropertyChange("KFLATAward2Name");
             KFLATAward2Sub = result.Count > 0 ? $"差分:{max}" : "";
             OnPropertyChange("KFLATAward2Sub");
@@ -107,7 +107,7 @@ namespace JOYLAND {
 
         // 最も高い宣言を成功させた人
         public void GetKFLATAward3() {
-            List<string> result = new List<string>();
+            HashSet<string> result = new HashSet<string>();
             int max = 0;
             foreach (PlayerData data in playerList) {
                 foreach (SelectMusicData selectData in data.musics.Values) {
@@ -124,7 +124,7 @@ namespace JOYLAND {
                 }
             }
 
-            KFLATAward3Name = result.Count > 0 ? ArrayToString(result) : "該当者なし";
+            KFLATAward3Name = result.Count > 0 ? CollectionToString(result) : "該当者なし";
             OnPropertyChange("KFLATAward3Name");
             KFLATAward3Sub = result.Count > 0 ? $"宣言スコア:{max}" : "";
             OnPropertyChange("KFLATAward3Sub");
@@ -132,7 +132,7 @@ namespace JOYLAND {
 
         // 選曲された楽曲のうち最もBPMが高い楽曲を選んだ人
         public void GetKFLATAward4() {
-            List<string> result = new List<string>();
+            HashSet<string> result = new HashSet<string>();
             int max = 0;
             foreach (PlayerData data in playerList) {
                 foreach (SelectMusicData selectData in data.musics.Values) {
@@ -147,7 +147,7 @@ namespace JOYLAND {
                 }
             }
 
-            KFLATAward4Name = result.Count > 0 ? ArrayToString(result) : "該当者なし";
+            KFLATAward4Name = result.Count > 0 ? CollectionToString(result) : "該当者なし";
             OnPropertyChange("KFLATAward4Name");
             KFLATAward4Sub = result.Count > 0 ? $"最高選曲BPM:{max}" : "";
             OnPropertyChange("KFLATAward4Sub");
@@ -155,13 +155,16 @@ namespace JOYLAND {
 
         // 3曲のニア合計が最も48に近い人
         public void GetKFLATAward5() {
-            List<string> result = new List<string>();
+            HashSet<string> result = new HashSet<string>();
             int min = int.MaxValue;
+            int near = 0;
             foreach (PlayerData data in playerList) {
                 if (data.musics.Count == 3) {
-                    int tmp = Math.Abs(data.musics.Sum(e => e.Value.near) - 48);
+                    int cnt = data.musics.Sum(e => e.Value.near);
+                    int tmp = Math.Abs(cnt - 48);
                     if (min > tmp) {
                         min = tmp;
+                        near = cnt;
                         result.Clear();
                         result.Add(data.userName);
                     } else if (min == tmp) {
@@ -170,16 +173,16 @@ namespace JOYLAND {
                 }
             }
 
-            KFLATAward5Name = result.Count > 0 ? ArrayToString(result) : "該当者なし";
+            KFLATAward5Name = result.Count > 0 ? CollectionToString(result) : "該当者なし";
             OnPropertyChange("KFLATAward5Name");
-            KFLATAward5Sub = result.Count > 0 ? $"合計ニア数:{min}" : "";
+            KFLATAward5Sub = result.Count > 0 ? $"合計ニア数:{near}" : "";
             OnPropertyChange("KFLATAward5Sub");
         }
 
         // 3曲に含まれるゲーミングFXチップの合計が最も多い人
         public void GetKFLATAward6() {
-            List<string> result = new List<string>();
-            int max = 0;
+            HashSet<string> result = new HashSet<string>();
+            int max = 1;
             foreach (PlayerData data in playerList) {
                 if (data.musics.Count == 3) {
                     int cnt = data.musics.Sum(e => e.Value.music.fx);
@@ -193,7 +196,7 @@ namespace JOYLAND {
                 }
             }
 
-            KFLATAward6Name = result.Count > 0 ? ArrayToString(result) : "該当者なし";
+            KFLATAward6Name = result.Count > 0 ? CollectionToString(result) : "該当者なし";
             OnPropertyChange("KFLATAward6Name");
             KFLATAward6Sub = result.Count > 0 ? $"合計FXチップ:{max}" : "";
             OnPropertyChange("KFLATAward6Sub");
@@ -215,16 +218,16 @@ namespace JOYLAND {
                 }
             }
 
-            EEL733Award1Name = result.Count > 0 ? ArrayToString(result) : "該当者なし";
+            EEL733Award1Name = result.Count > 0 ? CollectionToString(result) : "該当者なし";
             OnPropertyChange("EEL733Award1Name");
         }
 
         // 東方リミックス楽曲を最も多く選曲した人
         public void GetEEL733Award2() {
-            List<string> result = new List<string>();
+            HashSet<string> result = new HashSet<string>();
             int max = 1;
             foreach (PlayerData data in playerList) {
-                int cnt = data.musics.Select(e => e.Value.music.touhou).Count();
+                int cnt = data.musics.Where(e => e.Value.music.touhou).Count();
                 if (max < cnt) {
                     max = cnt;
                     result.Clear();
@@ -234,7 +237,7 @@ namespace JOYLAND {
                 }
             }
 
-            EEL733Award2Name = result.Count > 0 ? ArrayToString(result) : "該当者なし";
+            EEL733Award2Name = result.Count > 0 ? CollectionToString(result) : "該当者なし";
             OnPropertyChange("EEL733Award2Name");
             EEL733Award2Sub = result.Count > 0 ? $"選曲数:{max}" : "";
             OnPropertyChange("EEL733Award2Sub");
@@ -242,10 +245,10 @@ namespace JOYLAND {
 
         // ボルテIIIの譜面を最も多く選曲した人
         public void GetEEL733Award3() {
-            List<string> result = new List<string>();
+            HashSet<string> result = new HashSet<string>();
             int max = 1;
             foreach (PlayerData data in playerList) {
-                int cnt = data.musics.Select(e => e.Value.music.version == 3).Count();
+                int cnt = data.musics.Where(e => e.Value.music.version == 3).Count();
                 if (max < cnt) {
                     max = cnt;
                     result.Clear();
@@ -255,7 +258,7 @@ namespace JOYLAND {
                 }
             }
 
-            EEL733Award3Name = result.Count > 0 ? ArrayToString(result) : "該当者なし";
+            EEL733Award3Name = result.Count > 0 ? CollectionToString(result) : "該当者なし";
             OnPropertyChange("EEL733Award3Name");
             EEL733Award3Sub = result.Count > 0 ? $"選曲数:{max}" : "";
             OnPropertyChange("EEL733Award3Sub");
@@ -263,7 +266,7 @@ namespace JOYLAND {
 
         // 最も低いスコアを宣言した人
         public void GetEEL733Award4() {
-            List<string> result = new List<string>();
+            HashSet<string> result = new HashSet<string>();
             int min = 10000001;
             foreach (PlayerData data in playerList) {
                 foreach (SelectMusicData selectData in data.musics.Values) {
@@ -278,7 +281,7 @@ namespace JOYLAND {
                 }
             }
 
-            EEL733Award4Name = result.Count > 0 ? ArrayToString(result) : "該当者なし";
+            EEL733Award4Name = result.Count > 0 ? CollectionToString(result) : "該当者なし";
             OnPropertyChange("EEL733Award4Name");
             EEL733Award4Sub = result.Count > 0 ? $"宣言スコア:{min}" : "";
             OnPropertyChange("EEL733Award4Sub");
@@ -286,7 +289,7 @@ namespace JOYLAND {
 
         // 3曲の実プレースコアについて、分散が最も小さい人
         public void GetEEL733Award5() {
-            List<string> result = new List<string>();
+            HashSet<string> result = new HashSet<string>();
             long min = 300000000000000;
             foreach (PlayerData data in playerList) {
                 long tmp = data.variance140;
@@ -299,14 +302,14 @@ namespace JOYLAND {
                 }
             }
 
-            EEL733Award5Name = result.Count > 0 ? ArrayToString(result) : "該当者なし";
+            EEL733Award5Name = result.Count > 0 ? CollectionToString(result) : "該当者なし";
             OnPropertyChange("EEL733Award5Name");
             EEL733Award5Sub = result.Count > 0 ? $"分散:{min * 2 / 9.0:F2}" : "";
             OnPropertyChange("EEL733Award5Sub");
         }
 
-        private string ArrayToString(List<string> list) {
-            return string.Join("\n", list);
+        private string CollectionToString(IEnumerable<string> values) {
+            return string.Join("\n", values);
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

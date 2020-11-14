@@ -34,6 +34,9 @@ namespace JOYLAND {
                 }
             } else if (musicGrid2.SelectedItem != null) {
                 music = musicGrid2.SelectedItem as MusicData;
+                if (!music.visible) {
+                    return;
+                }
 
                 // 残り曲数が足りない場合は選曲不可
                 if (!vm.CanSelect()) {
@@ -51,6 +54,10 @@ namespace JOYLAND {
             } else {
                 // 未選択時は何もしない
                 return;
+            }
+
+            if (selectMusic != null) {
+                vm.UnSelect(selectMusic);
             }
 
             vm.Select(music);
@@ -72,11 +79,7 @@ namespace JOYLAND {
             musicGrid1.SelectedIndex = -1;
         }
 
-        private void musicGrid1_PreviewKeyDown(object sender, KeyEventArgs e) {
-            e.Handled = true;
-        }
-
-        private void musicGrid2_PreviewKeyDown(object sender, KeyEventArgs e) {
+        private void musicGrid_PreviewKeyDown(object sender, KeyEventArgs e) {
             e.Handled = true;
         }
     }
