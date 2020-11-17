@@ -1,9 +1,10 @@
 {
   "id": 0,
-  "playerNo": 5,
+  "playerNo": 10,
   "userName": "Gaming 20.06",
   "vf": 20.06,
   "vfLank": "Imperial1Low",
   "musics": {},
-  "scoreAll": 0
+  "scoreAll": 0,
+  "variance140": 300000000000001
 }
