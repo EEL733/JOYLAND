@@ -13,11 +13,23 @@
     FontSize="48"
     ResizeMode="NoResize"
     mc:Ignorable="d">
-    <StackPanel>
-        <Viewbox>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="9*" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Viewbox
+            Grid.Row="0"
+            Grid.Column="0"
+            Grid.ColumnSpan="3"
+            VerticalAlignment="Top">
             <DataGrid
                 Name="playerListGrid"
-                Grid.Row="0"
                 Margin="5"
                 AutoGenerateColumns="False"
                 IsReadOnly="True"
@@ -65,13 +77,21 @@
                 </DataGrid.Columns>
             </DataGrid>
         </Viewbox>
-        <Button
-            x:Name="button"
-            Grid.Row="1"
-            Margin="5"
-            Padding="10"
-            HorizontalAlignment="Center"
-            Click="ButtonClick"
-            Content="スコア登録" />
-    </StackPanel>
+        <Viewbox Grid.Row="1" Grid.Column="0">
+            <Button
+                Margin="20"
+                Padding="10"
+                HorizontalAlignment="Center"
+                Click="UserAddButtonClick"
+                Content="ユーザー追加" />
+        </Viewbox>
+        <Viewbox Grid.Row="1" Grid.Column="1">
+            <Button
+                Margin="5"
+                Padding="10"
+                HorizontalAlignment="Center"
+                Click="ButtonClick"
+                Content="スコア登録" />
+        </Viewbox>
+    </Grid>
 </Window>

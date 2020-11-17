@@ -5,7 +5,7 @@ using System.ComponentModel;
 
 namespace JOYLAND {
     internal class UserListWindowVM : INotifyPropertyChanged {
-        private PlayerDataRepository repository = PlayerDataRepository.Instance;
+        private readonly PlayerDataRepository repository = PlayerDataRepository.Instance;
 
         public List<PlayerData> AllUser {
             get {

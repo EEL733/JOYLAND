@@ -1,9 +1,6 @@
 ﻿using JOYLAND.Model;
 using JOYLAND.Util;
-using System.Text.RegularExpressions;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Input;
 
 namespace JOYLAND {
     public partial class DetailInputWindow : Window {

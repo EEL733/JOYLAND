@@ -3,11 +3,17 @@ using System.Windows;
 
 namespace JOYLAND {
     public partial class UserListWindow : Window {
-        UserListWindowVM vm = new UserListWindowVM();
+        private UserListWindowVM vm = new UserListWindowVM();
 
         public UserListWindow() {
             InitializeComponent();
             DataContext = vm;
+        }
+
+        private void UserAddButtonClick(object sender, RoutedEventArgs e) {
+            UserAddWindow window = new UserAddWindow();
+            window.ShowDialog();
+            vm.OnPropertyChange("AllUser");
         }
 
         private void ButtonClick(object sender, RoutedEventArgs e) {

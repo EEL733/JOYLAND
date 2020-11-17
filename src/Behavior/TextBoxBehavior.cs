@@ -50,7 +50,7 @@ namespace JOYLAND.Behavior {
 
     public class DeclaredScoreTextBoxBehavior : NumberTextBoxBehaviorBase {
         internal override bool CanInput(string text) {
-            if(!base.CanInput(text)) {
+            if (!base.CanInput(text)) {
                 return false;
             }
 
